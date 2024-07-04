@@ -26,7 +26,8 @@ const MESSAGE_HANDLERS = {
         if (msg.request === "slides")
         {
             const talkId = msg.talkId;
-            const slidesData = data[ talkId ];
+            const talksData = data[ talkId ];
+            const slidesData = talksData.slides || [];
             response = slidesData;
         }
 
@@ -115,7 +116,6 @@ function startWssServer()
         });
         ws.on("pong", heartbeat);
         ws.on("close", handleClientClose);
-        ws.send("hello");
     });
 
     wss.on("close", function close() {
