@@ -1,0 +1,7 @@
+{
+    "type": "module",
+    "dependencies": {
+        "graphql": "^16.9.0",
+        "ws": "^8.17.1"
+    }
+}
